@@ -115,6 +115,31 @@
     font-weight: 700;
   }
 
+  /* ===== CAMPAIGN BANNER ===== */
+  .campaign-banner {
+    background: linear-gradient(135deg, #fff8f0 0%, #fff0e8 100%);
+    border-bottom: 1px solid #f5e0d0;
+    padding: 10px 24px;
+  }
+  .campaign-banner-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    font-size: 13px;
+  }
+  .campaign-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .campaign-item span { color: var(--text-muted); font-weight: 400; }
+  .campaign-divider { color: var(--border); }
+
   /* ===== BREADCRUMB ===== */
   .breadcrumb {
     max-width: 1200px;
@@ -124,6 +149,7 @@
     color: var(--text-light);
   }
   .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--primary); }
   .breadcrumb span { margin: 0 6px; }
 
   /* ===== MAIN PRODUCT ===== */
@@ -169,6 +195,19 @@
     font-weight: 600;
     z-index: 2;
   }
+  .product-certified {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: white;
+    color: var(--primary);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    z-index: 2;
+    border: 1.5px solid var(--primary);
+  }
   .product-thumbs {
     display: flex;
     gap: 12px;
@@ -190,6 +229,31 @@
   .product-thumb.active, .product-thumb:hover {
     border-color: var(--primary);
   }
+
+  /* Producer card */
+  .producer-card {
+    margin-top: 20px;
+    background: var(--primary-light);
+    border-radius: var(--radius);
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .producer-avatar {
+    width: 52px;
+    height: 52px;
+    background: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    flex-shrink: 0;
+  }
+  .producer-info { flex: 1; }
+  .producer-name { font-size: 13px; font-weight: 700; color: var(--primary-dark); }
+  .producer-desc { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
 
   .product-info {
     padding-top: 8px;
@@ -217,6 +281,7 @@
   }
   .stars { color: #f59e0b; font-size: 16px; letter-spacing: 2px; }
   .rating-count { font-size: 13px; color: var(--text-muted); }
+  .rating-link { font-size: 13px; color: var(--primary); text-decoration: underline; cursor: pointer; }
   .product-price {
     font-size: 32px;
     font-weight: 700;
@@ -241,6 +306,25 @@
     display: inline-block;
     margin-bottom: 24px;
   }
+
+  /* Highlights */
+  .product-highlights {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 24px;
+    padding: 16px;
+    background: var(--border-light);
+    border-radius: var(--radius);
+  }
+  .highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+  .highlight-item strong { color: var(--primary-dark); font-weight: 600; }
 
   .product-options { margin-bottom: 24px; }
   .option-label {
@@ -332,8 +416,22 @@
     font-weight: 500;
     cursor: pointer;
     transition: all 0.2s;
+    margin-bottom: 12px;
   }
   .btn-wishlist:hover { border-color: var(--primary); color: var(--primary); }
+  .btn-gift {
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    color: var(--accent);
+    border: 1.5px solid var(--accent);
+    border-radius: var(--radius);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .btn-gift:hover { background: var(--accent-light); }
 
   .product-meta {
     margin-top: 24px;
@@ -350,6 +448,33 @@
   }
   .meta-icon { font-size: 16px; }
 
+  /* ===== FEATURE STRIPS ===== */
+  .feature-strip {
+    background: var(--surface);
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+    padding: 28px 24px;
+    margin-bottom: 40px;
+  }
+  .feature-strip-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .feature-item {
+    text-align: center;
+    padding: 20px 12px;
+    border-radius: var(--radius);
+    background: var(--bg);
+    transition: box-shadow 0.2s;
+  }
+  .feature-item:hover { box-shadow: var(--shadow-md); }
+  .feature-emoji { font-size: 36px; margin-bottom: 10px; }
+  .feature-title { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+  .feature-desc { font-size: 12px; color: var(--text-muted); line-height: 1.6; }
+
   /* ===== PRODUCT TABS ===== */
   .product-tabs-section {
     max-width: 1200px;
@@ -360,6 +485,7 @@
     display: flex;
     border-bottom: 2px solid var(--border-light);
     margin-bottom: 32px;
+    overflow-x: auto;
   }
   .tab-btn {
     padding: 12px 24px;
@@ -371,6 +497,7 @@
     cursor: pointer;
     position: relative;
     transition: color 0.2s;
+    white-space: nowrap;
   }
   .tab-btn.active {
     color: var(--primary);
@@ -385,8 +512,389 @@
     height: 2px;
     background: var(--primary);
   }
-  .tab-content { font-size: 14px; line-height: 1.9; color: var(--text-muted); }
-  .tab-content h3 { color: var(--text); font-size: 16px; margin: 20px 0 8px; }
+  .tab-content { font-size: 14px; line-height: 1.9; color: var(--text-muted); display: none; }
+  .tab-content.active { display: block; }
+  .tab-content h3 { color: var(--text); font-size: 16px; font-weight: 700; margin: 24px 0 10px; }
+  .tab-content h3:first-child { margin-top: 0; }
+  .tab-content p { margin-bottom: 12px; }
+
+  /* Spec table */
+  .spec-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+  .spec-table th {
+    background: var(--border-light);
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    color: var(--text);
+    width: 180px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .spec-table td {
+    padding: 12px 16px;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border-light);
+  }
+  .spec-table tr:last-child th,
+  .spec-table tr:last-child td { border-bottom: none; }
+
+  /* Review section */
+  .review-summary {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    padding: 24px;
+    background: var(--border-light);
+    border-radius: var(--radius-lg);
+    margin-bottom: 32px;
+  }
+  .review-score-big {
+    text-align: center;
+    min-width: 100px;
+  }
+  .review-score-num {
+    font-size: 56px;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .review-score-stars { font-size: 20px; color: #f59e0b; margin-bottom: 4px; }
+  .review-score-total { font-size: 12px; color: var(--text-muted); }
+  .review-bars { flex: 1; }
+  .review-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+  .review-bar-row .bar-label { width: 32px; text-align: right; }
+  .bar-track {
+    flex: 1;
+    height: 8px;
+    background: var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .bar-fill {
+    height: 100%;
+    background: #f59e0b;
+    border-radius: 4px;
+  }
+  .bar-count { width: 24px; }
+  .review-cards { display: flex; flex-direction: column; gap: 20px; }
+  .review-card {
+    background: var(--surface);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    padding: 20px;
+  }
+  .review-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  .reviewer-info { display: flex; align-items: center; gap: 10px; }
+  .reviewer-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--primary-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
+  .reviewer-name { font-size: 14px; font-weight: 600; color: var(--text); }
+  .reviewer-date { font-size: 12px; color: var(--text-light); }
+  .review-stars { color: #f59e0b; font-size: 14px; }
+  .review-verified {
+    font-size: 11px;
+    color: var(--primary);
+    font-weight: 600;
+    background: var(--primary-light);
+    padding: 2px 8px;
+    border-radius: 12px;
+  }
+  .review-title { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+  .review-body { font-size: 13px; color: var(--text-muted); line-height: 1.8; }
+  .review-helpful { font-size: 12px; color: var(--text-light); margin-top: 12px; }
+  .review-helpful a { color: var(--primary); cursor: pointer; }
+  .review-load-more {
+    text-align: center;
+    margin-top: 24px;
+  }
+  .btn-load-more {
+    padding: 10px 32px;
+    border: 1.5px solid var(--primary);
+    color: var(--primary);
+    background: transparent;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .btn-load-more:hover { background: var(--primary-light); }
+
+  /* FAQ section */
+  .faq-list { display: flex; flex-direction: column; gap: 12px; }
+  .faq-item {
+    background: var(--surface);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .faq-question {
+    padding: 16px 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    gap: 12px;
+    transition: background 0.2s;
+  }
+  .faq-question:hover { background: var(--border-light); }
+  .faq-question .q-icon { color: var(--primary); font-weight: 700; font-size: 16px; flex-shrink: 0; }
+  .faq-question .faq-arrow { transition: transform 0.2s; flex-shrink: 0; font-size: 12px; color: var(--text-muted); }
+  .faq-item.open .faq-arrow { transform: rotate(180deg); }
+  .faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.8;
+    border-top: 0px solid var(--border-light);
+  }
+  .faq-item.open .faq-answer {
+    padding: 16px 20px;
+    max-height: 300px;
+    border-top-width: 1px;
+  }
+  .faq-contact-box {
+    background: var(--primary-light);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .faq-contact-text { font-size: 14px; color: var(--primary-dark); }
+  .faq-contact-text strong { display: block; font-size: 15px; margin-bottom: 4px; }
+  .btn-contact {
+    padding: 10px 24px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    white-space: nowrap;
+  }
+  .btn-contact:hover { background: var(--primary-dark); }
+
+  /* ===== RELATED PRODUCTS ===== */
+  .related-section {
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    padding: 0 24px;
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+  .section-title {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .section-title::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 20px;
+    background: var(--primary);
+    border-radius: 2px;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  .section-link { font-size: 13px; color: var(--primary); text-decoration: none; }
+  .section-link:hover { text-decoration: underline; }
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .product-card {
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-light);
+    overflow: hidden;
+    transition: box-shadow 0.2s, transform 0.2s;
+    cursor: pointer;
+  }
+  .product-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+  .product-card-img {
+    width: 100%;
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, #f0f4f3, #e2ebe8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 64px;
+    position: relative;
+  }
+  .card-badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: var(--accent);
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 12px;
+  }
+  .product-card-body { padding: 14px; }
+  .card-category { font-size: 10px; color: var(--primary); font-weight: 600; letter-spacing: 0.05em; margin-bottom: 4px; }
+  .card-name { font-size: 13px; font-weight: 600; color: var(--text); line-height: 1.4; margin-bottom: 8px; }
+  .card-rating { font-size: 12px; color: #f59e0b; margin-bottom: 6px; }
+  .card-price { font-size: 16px; font-weight: 700; color: var(--text); }
+  .card-price-sub { font-size: 11px; color: var(--text-muted); font-weight: 400; margin-left: 2px; }
+  .card-price-original { font-size: 12px; color: var(--text-light); text-decoration: line-through; margin-left: 6px; }
+
+  /* ===== NEWSLETTER / SET PURCHASE ===== */
+  .set-purchase-section {
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    padding: 0 24px;
+  }
+  .set-purchase-banner {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+    border-radius: var(--radius-lg);
+    padding: 36px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    color: white;
+  }
+  .set-banner-text h3 {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .set-banner-text p { font-size: 14px; opacity: 0.85; line-height: 1.7; }
+  .set-banner-products {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+  .set-product-icon {
+    width: 64px;
+    height: 64px;
+    background: rgba(255,255,255,0.15);
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+  }
+  .set-plus { font-size: 24px; opacity: 0.7; }
+  .set-arrow { font-size: 20px; opacity: 0.7; }
+  .set-discount-badge {
+    background: var(--accent);
+    color: white;
+    padding: 8px 16px;
+    border-radius: var(--radius);
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+  }
+  .set-discount-badge .price { font-size: 20px; display: block; }
+  .btn-set-buy {
+    padding: 14px 32px;
+    background: white;
+    color: var(--primary-dark);
+    border: none;
+    border-radius: var(--radius);
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    flex-shrink: 0;
+  }
+  .btn-set-buy:hover { background: var(--accent-light); color: var(--accent); }
+
+  /* ===== NEWSLETTER ===== */
+  .newsletter-section {
+    background: var(--border-light);
+    padding: 48px 24px;
+    margin-bottom: 0;
+  }
+  .newsletter-inner {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .newsletter-inner h3 {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .newsletter-inner p { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; }
+  .newsletter-form {
+    display: flex;
+    gap: 8px;
+    max-width: 440px;
+    margin: 0 auto 12px;
+  }
+  .newsletter-input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .newsletter-input:focus { border-color: var(--primary); }
+  .btn-newsletter {
+    padding: 12px 20px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s;
+  }
+  .btn-newsletter:hover { background: var(--primary-dark); }
+  .newsletter-note { font-size: 11px; color: var(--text-light); }
 
   /* ===== TEST PANEL ===== */
   .test-panel {
@@ -504,9 +1012,58 @@
   .site-footer {
     background: var(--text);
     color: #9ca3af;
-    padding: 40px 24px 20px;
+    padding: 48px 24px 20px;
     font-size: 13px;
   }
+  .footer-brand {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    display: flex;
+    align-items: flex-start;
+    gap: 48px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #374151;
+  }
+  .footer-brand-info { max-width: 280px; }
+  .footer-logo {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .footer-logo-icon {
+    width: 28px;
+    height: 28px;
+    background: var(--primary);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+  }
+  .footer-tagline { font-size: 12px; color: #6b7280; line-height: 1.7; }
+  .footer-sns {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+  }
+  .sns-btn {
+    width: 36px;
+    height: 36px;
+    background: #374151;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.2s;
+  }
+  .sns-btn:hover { background: var(--primary); }
   .footer-inner {
     max-width: 1200px;
     margin: 0 auto;
@@ -524,26 +1081,63 @@
     display: block;
     color: #9ca3af;
     text-decoration: none;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     transition: color 0.2s;
+    font-size: 13px;
   }
   .footer-col a:hover { color: white; }
-  .footer-bottom {
+  .footer-trust {
     max-width: 1200px;
     margin: 32px auto 0;
-    padding-top: 20px;
+    padding-top: 24px;
     border-top: 1px solid #374151;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .footer-trust-badges {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .trust-badge {
+    background: #374151;
+    color: #9ca3af;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .footer-bottom {
     text-align: center;
     font-size: 12px;
+    color: #6b7280;
+    margin-top: 20px;
   }
 
   /* ===== RESPONSIVE ===== */
   @media (max-width: 768px) {
     .product-section { grid-template-columns: 1fr; gap: 24px; }
     .footer-inner { grid-template-columns: repeat(2, 1fr); }
+    .footer-brand { flex-direction: column; gap: 24px; }
     .header-nav { display: none; }
     .test-panel { width: 260px; left: 8px; }
     .test-panel.collapsed { transform: translateY(-50%) translateX(-240px); }
+    .feature-strip-inner { grid-template-columns: repeat(2, 1fr); }
+    .product-grid { grid-template-columns: repeat(2, 1fr); }
+    .set-purchase-banner { flex-direction: column; text-align: center; }
+    .set-banner-products { justify-content: center; }
+    .campaign-banner-inner { flex-direction: column; gap: 8px; }
+    .campaign-divider { display: none; }
+    .newsletter-form { flex-direction: column; }
+    .footer-trust { justify-content: center; }
+    .product-highlights { grid-template-columns: 1fr; }
+    .review-summary { flex-direction: column; gap: 20px; }
+    .faq-contact-box { flex-direction: column; gap: 12px; text-align: center; }
   }
 </style>
 </head>
@@ -551,7 +1145,7 @@
 
 <!-- ===== HEADER ===== -->
 <header class="site-header">
-  <div class="header-top">🚚 ¥5,000以上のお買い上げで送料無料 ｜ 14時までのご注文で当日発送</div>
+  <div class="header-top">🚚 ¥5,000以上のお買い上げで送料無料 ｜ 14時までのご注文で当日発送 ｜ 全国対応</div>
   <div class="header-main">
     <a href="#" class="logo">
       <div class="logo-icon">🍃</div>
@@ -561,11 +1155,23 @@
       <a href="#">新着商品</a>
       <a href="#">カテゴリー</a>
       <a href="#">ランキング</a>
+      <a href="#">特集・キャンペーン</a>
       <a href="#">お気に入り</a>
       <div class="cart-icon">🛒<span class="cart-badge">2</span></div>
     </nav>
   </div>
 </header>
+
+<!-- ===== CAMPAIGN BANNER ===== -->
+<div class="campaign-banner">
+  <div class="campaign-banner-inner">
+    <div class="campaign-item">🎉 初回限定 <span>— 新規会員登録で500ポイントプレゼント</span></div>
+    <div class="campaign-divider">|</div>
+    <div class="campaign-item">📦 定期購入 <span>— 毎月お届けで10%割引</span></div>
+    <div class="campaign-divider">|</div>
+    <div class="campaign-item">🎁 ギフト包装 <span>— 無料対応（のし・メッセージカード可）</span></div>
+  </div>
+</div>
 
 <!-- ===== BREADCRUMB ===== -->
 <div class="breadcrumb">
@@ -580,6 +1186,7 @@
   <div class="product-gallery">
     <div class="product-main-image">
       <div class="product-badge">期間限定 20%OFF</div>
+      <div class="product-certified">特A認定</div>
       🌾
     </div>
     <div class="product-thumbs">
@@ -587,6 +1194,14 @@
       <div class="product-thumb">🍚</div>
       <div class="product-thumb">📦</div>
       <div class="product-thumb">🏞️</div>
+      <div class="product-thumb">📜</div>
+    </div>
+    <div class="producer-card">
+      <div class="producer-avatar">👨‍🌾</div>
+      <div class="producer-info">
+        <div class="producer-name">生産者：田中農園（南魚沼市）</div>
+        <div class="producer-desc">栽培歴28年。「土づくりが全て」を信念に<br>農薬・化学肥料を極限まで減らした丁寧な米作り</div>
+      </div>
     </div>
   </div>
 
@@ -595,14 +1210,24 @@
     <h1 class="product-title">新潟県魚沼産コシヒカリ<br>特別栽培米 5kg【令和7年産】</h1>
     <div class="product-rating">
       <span class="stars">★★★★★</span>
-      <span class="rating-count">4.8（247件のレビュー）</span>
+      <span class="rating-count">4.8</span>
+      <span class="rating-link">（247件のレビューを見る）</span>
     </div>
     <div class="product-price">
       ¥4,280
       <span class="product-price-original">¥5,350</span>
     </div>
     <div class="product-tax">税込・送料無料</div>
-    <div class="product-points">🎁 購入で428ポイント還元</div>
+    <div class="product-points">🎁 購入で428ポイント還元（約1%）</div>
+
+    <div class="product-highlights">
+      <div class="highlight-item">🏆 <strong>食味検定 特A</strong>取得</div>
+      <div class="highlight-item">🌿 <strong>農薬50%減</strong>特別栽培</div>
+      <div class="highlight-item">🗓️ <strong>令和7年産</strong>新米</div>
+      <div class="highlight-item">🔒 <strong>産地証明書</strong>同梱</div>
+      <div class="highlight-item">❄️ <strong>低温貯蔵庫</strong>管理</div>
+      <div class="highlight-item">♻️ <strong>環境配慮</strong>包装材使用</div>
+    </div>
 
     <div class="product-options">
       <div class="option-label">内容量を選択</div>
@@ -610,6 +1235,7 @@
         <div class="option-chip">2kg ¥1,980</div>
         <div class="option-chip selected">5kg ¥4,280</div>
         <div class="option-chip">10kg ¥7,980</div>
+        <div class="option-chip">20kg ¥14,800</div>
       </div>
     </div>
 
@@ -619,6 +1245,7 @@
         <div class="option-chip selected">白米</div>
         <div class="option-chip">玄米</div>
         <div class="option-chip">無洗米 +¥200</div>
+        <div class="option-chip">三分づき</div>
       </div>
     </div>
 
@@ -629,19 +1256,49 @@
         <input class="qty-value" id="qty" value="1" readonly>
         <button class="qty-btn" onclick="changeQty(1)">+</button>
       </div>
+      <span style="font-size:12px;color:var(--text-muted)">在庫：残り 38点</span>
     </div>
 
     <button class="btn-cart">🛒 カートに入れる</button>
     <button class="btn-wishlist">♡ お気に入りに追加</button>
+    <button class="btn-gift">🎁 ギフト包装する（無料）</button>
 
     <div class="product-meta">
       <div class="meta-item"><span class="meta-icon">🚚</span> 最短翌日お届け（14時までのご注文）</div>
-      <div class="meta-item"><span class="meta-icon">🔄</span> 到着後7日以内返品OK</div>
+      <div class="meta-item"><span class="meta-icon">📦</span> 沖縄・離島を含む全国一律送料無料（¥5,000以上）</div>
+      <div class="meta-item"><span class="meta-icon">🔄</span> 到着後7日以内返品OK・品質保証</div>
       <div class="meta-item"><span class="meta-icon">🔒</span> 安心のSSL暗号化通信</div>
-      <div class="meta-item"><span class="meta-icon">💳</span> クレジットカード・PayPay・コンビニ払い対応</div>
+      <div class="meta-item"><span class="meta-icon">💳</span> クレジットカード・PayPay・コンビニ払い・代引き対応</div>
+      <div class="meta-item"><span class="meta-icon">🧾</span> 領収書・インボイス対応可</div>
     </div>
   </div>
 </main>
+
+<!-- ===== FEATURE STRIP ===== -->
+<div class="feature-strip">
+  <div class="feature-strip-inner">
+    <div class="feature-item">
+      <div class="feature-emoji">🌾</div>
+      <div class="feature-title">産地直送</div>
+      <div class="feature-desc">収穫後すぐに精米・出荷。<br>新鮮さをそのままお届け</div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-emoji">🧪</div>
+      <div class="feature-title">品質検査済み</div>
+      <div class="feature-desc">農薬残留・放射性物質を<br>全ロット検査・証明書同梱</div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-emoji">🔄</div>
+      <div class="feature-title">返品保証</div>
+      <div class="feature-desc">品質に満足できない場合<br>全額返金または交換対応</div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-emoji">🎁</div>
+      <div class="feature-title">ギフト対応</div>
+      <div class="feature-desc">のし・メッセージカード・<br>化粧箱包装すべて無料</div>
+    </div>
+  </div>
+</div>
 
 <!-- ===== TABS ===== -->
 <section class="product-tabs-section">
@@ -651,14 +1308,407 @@
     <button class="tab-btn" onclick="switchTab(this, 'review')">レビュー（247）</button>
     <button class="tab-btn" onclick="switchTab(this, 'faq')">よくある質問</button>
   </div>
-  <div class="tab-content" id="tab-desc">
+
+  <!-- 商品説明 -->
+  <div class="tab-content active" id="tab-desc">
     <p>日本有数の米どころ、新潟県魚沼地域で丹精込めて育てた特別栽培米コシヒカリです。農薬・化学肥料を通常の半分以下に抑え、自然の力を活かした栽培方法で育てました。</p>
-    <h3>おいしさの秘密</h3>
-    <p>魚沼地域特有の昼夜の寒暖差が、お米の甘みと粘りを最大限に引き出します。冷めてもおいしいので、お弁当やおにぎりにも最適です。炊き立ての艶やかな輝きと、口に広がる豊かな甘みをお楽しみください。</p>
-    <h3>生産者のこだわり</h3>
-    <p>当農園では、土づくりから収穫まで一貫して品質管理を行っています。食味検定では最高ランク「特A」を連続受賞。ご家庭の食卓に、本物の新潟米をお届けします。</p>
+
+    <h3>おいしさの秘密 — 魚沼の自然が育む旨味</h3>
+    <p>魚沼地域特有の昼夜の寒暖差（日較差10℃以上）が、お米の甘みと粘りを最大限に引き出します。また、周囲を山々に囲まれた盆地特有の霧が稲を包み込み、ゆっくりと成熟することで粒が充実。冷めてもおいしいので、お弁当やおにぎりにも最適です。</p>
+
+    <h3>特別栽培とは</h3>
+    <p>「特別栽培米」とは、農林水産省のガイドラインに基づき、農薬・化学肥料の使用量をその地域の慣行レベルから50%以上削減した栽培方法によって生産されたお米のことです。当農園では独自の堆肥を使用した土壌改良と、天敵（カエル・クモ等）を活用した生物防除により、より安心・安全なお米づくりに取り組んでいます。</p>
+
+    <h3>食味検定「特A」の実力</h3>
+    <p>日本穀物検定協会が実施する食味ランキングで最高評価「特A」を9年連続受賞（2015年〜2023年）。炊き立ての艶やかな輝きと、口に広がる豊かな甘み、もちもちとした食感は一度食べれば忘れられません。</p>
+
+    <h3>おすすめの炊き方</h3>
+    <p>米1合（180ml）に対して水200mlが目安。炊く前に30分〜1時間浸水させるとより美味しく炊き上がります。炊き上がったら15分ほど蒸らし、しゃもじで底からふんわりと混ぜてください。ミネラルウォーターで炊くとさらに旨味が増します。</p>
+
+    <h3>保存方法</h3>
+    <p>直射日光・高温多湿を避けて保存してください。精米後はなるべく早めにお召し上がりいただくことをおすすめします（目安：夏場は1ヶ月以内、冬場は2ヶ月以内）。お米専用の密閉容器に移し替え、冷蔵庫の野菜室で保存するのがベストです。</p>
+  </div>
+
+  <!-- 仕様・スペック -->
+  <div class="tab-content" id="tab-spec">
+    <table class="spec-table">
+      <tr><th>品名</th><td>新潟県魚沼産コシヒカリ 特別栽培米</td></tr>
+      <tr><th>産地</th><td>新潟県南魚沼市（魚沼産）</td></tr>
+      <tr><th>品種</th><td>コシヒカリ</td></tr>
+      <tr><th>産年</th><td>令和7年産（2025年）</td></tr>
+      <tr><th>栽培方法</th><td>特別栽培米（農薬・化学肥料50%以上削減）</td></tr>
+      <tr><th>食味評価</th><td>日本穀物検定協会 食味ランキング「特A」</td></tr>
+      <tr><th>内容量</th><td>5kg（2kg・10kg・20kgも選択可）</td></tr>
+      <tr><th>精米日</th><td>注文後に精米（新鮮精米出荷）</td></tr>
+      <tr><th>精米方法</th><td>白米・玄米・無洗米・三分づきから選択可</td></tr>
+      <tr><th>アレルゲン</th><td>なし（小麦・乳等の成分は含みません）</td></tr>
+      <tr><th>農薬検査</th><td>全ロット農薬残留検査実施済み</td></tr>
+      <tr><th>放射性物質検査</th><td>全ロット検査実施済み（検出なし）</td></tr>
+      <tr><th>保存方法</th><td>直射日光・高温多湿を避けて保存</td></tr>
+      <tr><th>賞味期限</th><td>精米日より白米：60日、玄米：90日（目安）</td></tr>
+      <tr><th>生産者</th><td>田中農園（新潟県南魚沼市）</td></tr>
+      <tr><th>製造者・販売者</th><td>にいがた良品株式会社（デモ）</td></tr>
+      <tr><th>発送方法</th><td>宅配便（ヤマト運輸・佐川急便）</td></tr>
+      <tr><th>お届け目安</th><td>ご注文から1〜3営業日以内に発送</td></tr>
+    </table>
+
+    <h3>栄養成分（100gあたり・精白米）</h3>
+    <table class="spec-table">
+      <tr><th>エネルギー</th><td>168 kcal</td></tr>
+      <tr><th>たんぱく質</th><td>2.5 g</td></tr>
+      <tr><th>脂質</th><td>0.3 g</td></tr>
+      <tr><th>炭水化物</th><td>37.1 g</td></tr>
+      <tr><th>食塩相当量</th><td>0 g</td></tr>
+    </table>
+  </div>
+
+  <!-- レビュー -->
+  <div class="tab-content" id="tab-review">
+    <div class="review-summary">
+      <div class="review-score-big">
+        <div class="review-score-num">4.8</div>
+        <div class="review-score-stars">★★★★★</div>
+        <div class="review-score-total">247件のレビュー</div>
+      </div>
+      <div class="review-bars">
+        <div class="review-bar-row">
+          <span class="bar-label">5★</span>
+          <div class="bar-track"><div class="bar-fill" style="width:82%"></div></div>
+          <span class="bar-count">203</span>
+        </div>
+        <div class="review-bar-row">
+          <span class="bar-label">4★</span>
+          <div class="bar-track"><div class="bar-fill" style="width:12%"></div></div>
+          <span class="bar-count">30</span>
+        </div>
+        <div class="review-bar-row">
+          <span class="bar-label">3★</span>
+          <div class="bar-track"><div class="bar-fill" style="width:4%"></div></div>
+          <span class="bar-count">9</span>
+        </div>
+        <div class="review-bar-row">
+          <span class="bar-label">2★</span>
+          <div class="bar-track"><div class="bar-fill" style="width:1%"></div></div>
+          <span class="bar-count">3</span>
+        </div>
+        <div class="review-bar-row">
+          <span class="bar-label">1★</span>
+          <div class="bar-track"><div class="bar-fill" style="width:1%"></div></div>
+          <span class="bar-count">2</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-cards">
+      <div class="review-card">
+        <div class="review-card-header">
+          <div class="reviewer-info">
+            <div class="reviewer-avatar">😊</div>
+            <div>
+              <div class="reviewer-name">山田 花子</div>
+              <div class="reviewer-date">2025年10月14日</div>
+            </div>
+          </div>
+          <div>
+            <div class="review-stars">★★★★★</div>
+            <div class="review-verified">✓ 購入済み</div>
+          </div>
+        </div>
+        <div class="review-title">炊き立ての香りと甘みが格別です</div>
+        <div class="review-body">スーパーのお米とは全く違います。炊いた瞬間の香りが豊かで、口に入れると自然な甘みとふっくらとした食感が広がります。子どもたちも「このご飯おいしい！」と喜んで食べてくれました。少し値段は高めですが、それだけの価値があります。定期購入にしようと思っています。</div>
+        <div class="review-helpful">参考になった？ <a>はい（42）</a> ｜ <a>いいえ（2）</a></div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-card-header">
+          <div class="reviewer-info">
+            <div class="reviewer-avatar">🧑</div>
+            <div>
+              <div class="reviewer-name">T.Kobayashi</div>
+              <div class="reviewer-date">2025年10月2日</div>
+            </div>
+          </div>
+          <div>
+            <div class="review-stars">★★★★★</div>
+            <div class="review-verified">✓ 購入済み</div>
+          </div>
+        </div>
+        <div class="review-title">ギフトに最適。先方にも大変喜ばれました</div>
+        <div class="review-body">両親への誕生日プレゼントとして注文しました。化粧箱・のし対応も丁寧で、開けた瞬間から「高級感がある」と言ってもらえました。産地証明書も同梱されており、安心して贈ることができました。リピート確定です。</div>
+        <div class="review-helpful">参考になった？ <a>はい（37）</a> ｜ <a>いいえ（1）</a></div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-card-header">
+          <div class="reviewer-info">
+            <div class="reviewer-avatar">👩</div>
+            <div>
+              <div class="reviewer-name">さくら</div>
+              <div class="reviewer-date">2025年9月28日</div>
+            </div>
+          </div>
+          <div>
+            <div class="review-stars">★★★★☆</div>
+            <div class="review-verified">✓ 購入済み</div>
+          </div>
+        </div>
+        <div class="review-title">おいしい！ただ配送がもう少し早いと嬉しい</div>
+        <div class="review-body">お米自体はとても美味しくて大満足です。冷めてもおいしいのが特に気に入っています。ただ、注文から届くまで4日かかったので、もう少し早いと嬉しいです。品質は文句なしなので、次回もリピートすると思います。</div>
+        <div class="review-helpful">参考になった？ <a>はい（18）</a> ｜ <a>いいえ（4）</a></div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-card-header">
+          <div class="reviewer-info">
+            <div class="reviewer-avatar">🧓</div>
+            <div>
+              <div class="reviewer-name">田中 義雄（65歳）</div>
+              <div class="reviewer-date">2025年9月15日</div>
+            </div>
+          </div>
+          <div>
+            <div class="review-stars">★★★★★</div>
+            <div class="review-verified">✓ 購入済み</div>
+          </div>
+        </div>
+        <div class="review-title">農薬少ないのが安心。玄米で注文しました</div>
+        <div class="review-body">健康のために玄米を食べるようにしていますが、農薬が気になって今まで買える場所が限られていました。こちらの特別栽培米は農薬検査の証明書もついており、安心して食べられます。玄米特有のパサつきも少なく、食べやすいです。</div>
+        <div class="review-helpful">参考になった？ <a>はい（24）</a> ｜ <a>いいえ（0）</a></div>
+      </div>
+    </div>
+
+    <div class="review-load-more">
+      <button class="btn-load-more">もっと見る（243件）</button>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="tab-content" id="tab-faq">
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span><span class="q-icon">Q.</span> 送料はいくらですか？無料になる条件はありますか？</span>
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-answer">全国一律520円（税込）です。¥5,000以上のご注文で送料が無料になります。今回ご覧の商品（5kg ¥4,280）は単品では送料がかかりますが、複数点まとめてご購入いただければ送料無料でお届けできます。なお、沖縄・離島へのお届けも通常送料と同額です。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span><span class="q-icon">Q.</span> 注文してから何日で届きますか？</span>
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-answer">平日14時までのご注文は当日発送、翌日〜翌々日のお届けが目安です。注文後に精米するため、最短でも翌日お届けとなります（エリアによっては2〜3日）。発送完了後、メールにて追跡番号をお知らせします。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span><span class="q-icon">Q.</span> 返品・交換はできますか？</span>
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-answer">商品到着後7日以内であれば、品質に問題がある場合は無料で返品・交換に応じます。お客様都合の返品は未開封に限り承ります（往復送料はお客様負担）。返品希望の場合はサポートメールまたは電話にてご連絡ください。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span><span class="q-icon">Q.</span> 支払い方法を教えてください</span>
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-answer">クレジットカード（VISA・Mastercard・JCB・AMEX）、PayPay、楽天ペイ、コンビニ払い（ファミリーマート・ローソン等）、代金引換、銀行振込（前払い）に対応しています。コンビニ払いは注文後5日以内にお支払いをお願いします。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span><span class="q-icon">Q.</span> ギフト包装・のし対応はしていますか？</span>
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-answer">はい、無料で承っています。化粧箱包装、のし（内のし・外のし）、メッセージカードに対応しています。カートに入れた後の注文画面でギフト設定をお選びください。ご用途（出産祝い、結婚祝い、お歳暮等）をお知らせいただければ適切な表書きをいたします。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span><span class="q-icon">Q.</span> 定期購入はありますか？</span>
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-answer">はい、毎月・隔月・3ヶ月ごとの3つのプランから選べる定期購入サービスをご用意しています。定期購入なら通常価格より10%割引でご提供します。いつでも休止・解約が可能で、配送日の変更も承っています。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span><span class="q-icon">Q.</span> 農薬・放射性物質の検査結果を確認できますか？</span>
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-answer">はい、全ロット検査を実施しており、検査証明書を商品に同梱しています。また、農林水産省の「特別栽培農産物に係る表示ガイドライン」に基づく証明書も添付しています。検査機関のデータはご要望に応じてメールにてご提供も可能です。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span><span class="q-icon">Q.</span> 領収書・インボイスは発行できますか？</span>
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-answer">はい、適格請求書（インボイス）を発行しています。注文完了メールに領収書PDFのダウンロードリンクを記載しています。宛名を変更したい場合はサポートまでお問い合わせください。</div>
+      </div>
+
+    </div>
+
+    <div class="faq-contact-box">
+      <div class="faq-contact-text">
+        <strong>解決しない場合は、チャットまたはお電話で</strong>
+        平日9:00〜18:00でサポートスタッフが対応いたします。チャットボットからのご質問もお気軽にどうぞ。
+      </div>
+      <button class="btn-contact">💬 お問い合わせ</button>
+    </div>
   </div>
 </section>
+
+<!-- ===== SET PURCHASE ===== -->
+<div class="set-purchase-section">
+  <div class="set-purchase-banner">
+    <div class="set-banner-text">
+      <h3>🎁 セット購入で最大15%オフ</h3>
+      <p>魚沼産コシヒカリ × 新潟産こしひかり甘酒のセットが人気です。<br>ご飯のお供と一緒に購入すると自動で割引が適用されます。</p>
+    </div>
+    <div class="set-banner-products">
+      <div class="set-product-icon">🌾</div>
+      <span class="set-plus">＋</span>
+      <div class="set-product-icon">🍶</div>
+      <span class="set-arrow">→</span>
+      <div class="set-discount-badge">
+        <span class="price">¥5,980</span>
+        通常¥6,980
+      </div>
+    </div>
+    <button class="btn-set-buy">セットで買う</button>
+  </div>
+</div>
+
+<!-- ===== RELATED PRODUCTS ===== -->
+<section class="related-section">
+  <div class="section-header">
+    <h2 class="section-title">一緒に購入されている商品</h2>
+    <a href="#" class="section-link">すべて見る →</a>
+  </div>
+  <div class="product-grid">
+    <div class="product-card">
+      <div class="product-card-img">
+        <div class="card-badge">新着</div>
+        🍶
+      </div>
+      <div class="product-card-body">
+        <div class="card-category">発酵・醸造</div>
+        <div class="card-name">越後の甘酒 特製ブレンド 720ml</div>
+        <div class="card-rating">★★★★★ (89)</div>
+        <div class="card-price">¥1,280 <span class="card-price-sub">税込</span></div>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-card-img">
+        🫙
+      </div>
+      <div class="product-card-body">
+        <div class="card-category">加工食品</div>
+        <div class="card-name">南魚沼産 手作りぬか漬けセット</div>
+        <div class="card-rating">★★★★☆ (54)</div>
+        <div class="card-price">¥2,480 <span class="card-price-sub">税込</span> <span class="card-price-original">¥2,980</span></div>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-card-img">
+        <div class="card-badge">人気</div>
+        🍷
+      </div>
+      <div class="product-card-body">
+        <div class="card-category">日本酒</div>
+        <div class="card-name">越乃寒梅 純米大吟醸 720ml</div>
+        <div class="card-rating">★★★★★ (132)</div>
+        <div class="card-price">¥3,780 <span class="card-price-sub">税込</span></div>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-card-img">
+        🫚
+      </div>
+      <div class="product-card-body">
+        <div class="card-category">調味料</div>
+        <div class="card-name">新潟産こしひかり米油 600g</div>
+        <div class="card-rating">★★★★☆ (41)</div>
+        <div class="card-price">¥1,080 <span class="card-price-sub">税込</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RANKING SECTION ===== -->
+<section class="related-section">
+  <div class="section-header">
+    <h2 class="section-title">週間ランキング</h2>
+    <a href="#" class="section-link">ランキング一覧 →</a>
+  </div>
+  <div class="product-grid">
+    <div class="product-card">
+      <div class="product-card-img" style="background:linear-gradient(135deg,#fff8e1,#fff3cd)">
+        <div class="card-badge" style="background:#f59e0b">1位</div>
+        🌾
+      </div>
+      <div class="product-card-body">
+        <div class="card-category">米・雑穀</div>
+        <div class="card-name">魚沼産コシヒカリ 特別栽培米 5kg（当商品）</div>
+        <div class="card-rating">★★★★★ (247)</div>
+        <div class="card-price">¥4,280 <span class="card-price-sub">税込</span></div>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-card-img">
+        <div class="card-badge" style="background:#9ca3af">2位</div>
+        🍱
+      </div>
+      <div class="product-card-body">
+        <div class="card-category">米・雑穀</div>
+        <div class="card-name">新潟産こしひかり 無農薬玄米 5kg</div>
+        <div class="card-rating">★★★★★ (183)</div>
+        <div class="card-price">¥4,680 <span class="card-price-sub">税込</span></div>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-card-img">
+        <div class="card-badge" style="background:#cd7f32">3位</div>
+        🎎
+      </div>
+      <div class="product-card-body">
+        <div class="card-category">工芸品</div>
+        <div class="card-name">燕三条 手作り木製弁当箱</div>
+        <div class="card-rating">★★★★☆ (97)</div>
+        <div class="card-price">¥5,800 <span class="card-price-sub">税込</span></div>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-card-img">
+        <div class="card-badge" style="background:#6b7280">4位</div>
+        🍡
+      </div>
+      <div class="product-card-body">
+        <div class="card-category">スイーツ</div>
+        <div class="card-name">新潟銘菓 笹団子 10個入り</div>
+        <div class="card-rating">★★★★★ (215)</div>
+        <div class="card-price">¥1,480 <span class="card-price-sub">税込</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== NEWSLETTER ===== -->
+<div class="newsletter-section">
+  <div class="newsletter-inner">
+    <h3>🍃 メルマガ登録で最新情報をお届け</h3>
+    <p>新商品・季節の特集・限定クーポンなどをいち早くお知らせします。<br>登録は無料で、いつでも解除できます。</p>
+    <div class="newsletter-form">
+      <input type="email" class="newsletter-input" placeholder="メールアドレスを入力">
+      <button class="btn-newsletter">無料登録</button>
+    </div>
+    <p class="newsletter-note">プライバシーポリシーに同意の上ご登録ください。第三者への提供はいたしません。</p>
+  </div>
+</div>
 
 <!-- ===== TEST PANEL ===== -->
 <div class="test-panel" id="testPanel">
@@ -681,6 +1731,12 @@
       </button>
       <button class="test-btn" onclick="sendTestQuery('注文してからどのくらいで届きますか？')">
         <span class="test-tag tag-basic">基本</span>配送日数
+      </button>
+      <button class="test-btn" onclick="sendTestQuery('ギフト包装はできますか？')">
+        <span class="test-tag tag-basic">基本</span>ギフト対応
+      </button>
+      <button class="test-btn" onclick="sendTestQuery('定期購入はありますか？')">
+        <span class="test-tag tag-basic">基本</span>定期購入
       </button>
     </div>
 
@@ -743,37 +1799,69 @@
 
 <!-- ===== FOOTER ===== -->
 <footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-col">
-      <h4>にいがた良品</h4>
-      <a href="#">会社概要</a>
-      <a href="#">特定商取引法に基づく表記</a>
-      <a href="#">プライバシーポリシー</a>
-      <a href="#">利用規約</a>
+  <div class="footer-brand">
+    <div class="footer-brand-info">
+      <div class="footer-logo"><div class="footer-logo-icon">🍃</div> にいがた良品</div>
+      <div class="footer-tagline">新潟の大地が育む本物の味を、全国のお客様の食卓へ。生産者と消費者をつなぐ産直ECサイトです。（デモサイト）</div>
+      <div class="footer-sns">
+        <div class="sns-btn">𝕏</div>
+        <div class="sns-btn">📘</div>
+        <div class="sns-btn">📷</div>
+        <div class="sns-btn">▶️</div>
+      </div>
     </div>
-    <div class="footer-col">
-      <h4>お買い物ガイド</h4>
-      <a href="#">ご注文方法</a>
-      <a href="#">お支払い方法</a>
-      <a href="#">送料・配送について</a>
-      <a href="#">返品・交換について</a>
-    </div>
-    <div class="footer-col">
-      <h4>カテゴリー</h4>
-      <a href="#">米・雑穀</a>
-      <a href="#">日本酒・地酒</a>
-      <a href="#">スイーツ・菓子</a>
-      <a href="#">工芸品</a>
-    </div>
-    <div class="footer-col">
-      <h4>お問い合わせ</h4>
-      <a href="#">📧 support@niigata-ryohin.example.jp</a>
-      <a href="#">📞 0120-XXX-XXX</a>
-      <a href="#">受付時間: 平日 9:00〜18:00</a>
+    <div style="flex:1; display:grid; grid-template-columns: repeat(4,1fr); gap:32px;">
+      <div class="footer-col">
+        <h4>にいがた良品</h4>
+        <a href="#">会社概要</a>
+        <a href="#">特定商取引法に基づく表記</a>
+        <a href="#">プライバシーポリシー</a>
+        <a href="#">利用規約</a>
+        <a href="#">採用情報</a>
+        <a href="#">メディア掲載</a>
+      </div>
+      <div class="footer-col">
+        <h4>お買い物ガイド</h4>
+        <a href="#">ご注文方法</a>
+        <a href="#">お支払い方法</a>
+        <a href="#">送料・配送について</a>
+        <a href="#">返品・交換について</a>
+        <a href="#">ギフト・のし対応</a>
+        <a href="#">ポイント制度</a>
+        <a href="#">定期購入について</a>
+      </div>
+      <div class="footer-col">
+        <h4>カテゴリー</h4>
+        <a href="#">米・雑穀</a>
+        <a href="#">日本酒・地酒</a>
+        <a href="#">スイーツ・菓子</a>
+        <a href="#">工芸品・雑貨</a>
+        <a href="#">発酵・醸造</a>
+        <a href="#">調味料・加工食品</a>
+        <a href="#">ギフトセット</a>
+      </div>
+      <div class="footer-col">
+        <h4>お問い合わせ</h4>
+        <a href="#">📧 support@niigata-ryohin.example.jp</a>
+        <a href="#">📞 0120-XXX-XXX（通話無料）</a>
+        <a href="#">受付: 平日 9:00〜18:00</a>
+        <a href="#">💬 チャットサポート</a>
+        <a href="#">📋 よくあるご質問</a>
+        <a href="#">📦 配送状況の確認</a>
+      </div>
     </div>
   </div>
-  <div class="footer-bottom">
-    © 2026 にいがた良品（デモサイト） — AI FAQ チャットボット テスト環境
+  <div class="footer-trust">
+    <div class="footer-trust-badges">
+      <div class="trust-badge">🔒 SSL暗号化通信</div>
+      <div class="trust-badge">✅ 農薬検査実施</div>
+      <div class="trust-badge">🏆 特A認定生産者</div>
+      <div class="trust-badge">📜 産地証明書同梱</div>
+      <div class="trust-badge">🔄 7日間返品保証</div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 にいがた良品（デモサイト） — AI FAQ チャットボット テスト環境
+    </div>
   </div>
 </footer>
 
@@ -786,14 +1874,12 @@
 
 <!-- ===== SCRIPTS ===== -->
 <script>
-  // Quantity control
   function changeQty(delta) {
     const el = document.getElementById('qty');
     const v = Math.max(1, Math.min(10, parseInt(el.value) + delta));
     el.value = v;
   }
 
-  // Option chip selection
   document.querySelectorAll('.option-chips').forEach(group => {
     group.querySelectorAll('.option-chip').forEach(chip => {
       chip.addEventListener('click', () => {
@@ -803,13 +1889,13 @@
     });
   });
 
-  // Tab switching
   function switchTab(btn, id) {
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
     btn.classList.add('active');
+    document.getElementById('tab-' + id).classList.add('active');
   }
 
-  // Thumbnail switching
   document.querySelectorAll('.product-thumb').forEach(thumb => {
     thumb.addEventListener('click', () => {
       document.querySelectorAll('.product-thumb').forEach(t => t.classList.remove('active'));
@@ -817,7 +1903,11 @@
     });
   });
 
-  // Test Panel
+  function toggleFaq(questionEl) {
+    const item = questionEl.closest('.faq-item');
+    item.classList.toggle('open');
+  }
+
   function toggleTestPanel() {
     const panel = document.getElementById('testPanel');
     const btn = document.getElementById('toggleBtn');
@@ -832,7 +1922,6 @@
     entry.className = 'log-entry';
     entry.innerHTML = `<span class="log-time">[${now}]</span> ${msg}`;
     log.prepend(entry);
-    // Keep last 50 entries
     while (log.children.length > 50) log.removeChild(log.lastChild);
   }
 
@@ -844,14 +1933,10 @@
       addLog(`📤 送信: "${preview}"`);
     }
 
-    // Try to interact with the chatbot widget
-    // Common widget APIs - adjust based on your actual widget interface
     try {
-      // Method 1: Dispatch custom event
       window.dispatchEvent(new CustomEvent('chatbot-open'));
       window.dispatchEvent(new CustomEvent('chatbot-send', { detail: { message: query } }));
 
-      // Method 2: Try common global APIs
       if (window.ChatbotWidget) {
         window.ChatbotWidget.open();
         window.ChatbotWidget.send(query);
@@ -862,7 +1947,6 @@
         addLog('✅ __faqbot API で送信');
       } else {
         addLog('ℹ️ ウィジェットAPIが見つかりません。手動でコピーしてください。');
-        // Fallback: copy to clipboard
         if (query) {
           navigator.clipboard.writeText(query).then(() => {
             addLog('📋 クリップボードにコピーしました');
@@ -890,7 +1974,6 @@
     });
   }
 
-  // Log widget load status
   window.addEventListener('load', () => {
     setTimeout(() => {
       const widgetLoaded = document.querySelector('[data-tenant-id]') ||
